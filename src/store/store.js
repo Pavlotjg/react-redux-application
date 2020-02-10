@@ -9,12 +9,11 @@ function rootReducer(state = initialState, action) {
 
     case 'ADD_POST': {
       const {posts} = state;
-      const updatedPosts = [...posts, action.payload];
+      const updatedPosts = [action.payload,  ...posts ];
       return {...state, posts: updatedPosts};
     }
 
     case 'UPDATE_USERS': {
-      console.log('>> yes, it goes through fucking reducer!');
       return {...state, users: action.payload}
     }
 

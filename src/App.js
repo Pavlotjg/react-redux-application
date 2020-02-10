@@ -9,15 +9,13 @@ import {store} from './store/store'
 
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <div className="App">
+          <div className="app">
             <Route path={['/', '/users']} exact render={(props) => <Users {...props} />}/>
             <Route path="/users/:userId/posts" exact render={(props) => <Posts {...props} />}/>
             <Route path="/users/:userId/posts/:postId/details" exact render={(props) => <Post {...props} />}/>
