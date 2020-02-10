@@ -15,7 +15,7 @@ class Post extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     const {postId} = this.props.match.params;
-    //////////////////////////////////////////////////////
+
     dispatch({
       type: 'UPDATE_CURRENT_POST',
       payload: undefined
