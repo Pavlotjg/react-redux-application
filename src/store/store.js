@@ -14,7 +14,6 @@ function rootReducer(state = initialState, action) {
     }
 
     case 'UPDATE_USERS': {
-      console.log('>> yes, it goes through fucking reducer!');
       return {...state, users: action.payload}
     }
 

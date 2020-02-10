@@ -14,7 +14,13 @@ class Post extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    const {postId, userId} = this.props.match.params;
+    const {postId} = this.props.match.params;
+    //////////////////////////////////////////////////////
+    dispatch({
+      type: 'UPDATE_CURRENT_POST',
+      payload: undefined
+    });
+
     fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
       .then(response => response.json())
       .then(comments => this.setState({comments: comments}));
@@ -44,34 +50,35 @@ class Post extends Component {
   render() {
     const {comments} = this.state;
     const { post = {}} = this.props;
-    const {postId, userId} = this.props.match.params;
+    const {userId} = this.props.match.params;
     const showListOfComments = (comments || []).map(comment => (
-      <div key={comment.id}>
-        <div>{comment.postId}</div>
-        <div>{comment.id}</div>
-        <div>{comment.name}</div>
-        <div>{comment.email}</div>
-        <div>{comment.body}</div>
+      <div className="commentPage" key={comment.id}>
+        <span> <b>Post ID:</b> {comment.postId}</span> <br/>
+        <span> <b>Comment ID:</b> {comment.id}</span> <br/>
+        <span> <b>Comment TITLE:</b> {comment.name}</span> <br/>
+        <span> <b>Email:</b> {comment.email}</span> <br/>
+        <span> <b>Comment:</b> {comment.body}</span>
         <br/>
       </div>
     ));
 
     return (
       <div>
+        <h2>COMMENTS</h2>
         <NavLink to={`/users/${userId}/posts`}>
-          <button>BACK</button>
+          <button className="commonButtons">BACK</button>
         </NavLink>
-        <div key={post.id}>
-          <span>  {post.title}</span> <br/>
-          <span> {post.body}</span> <br/>
-        </div>
-        {showListOfComments}
-        <Popup trigger={<button>EDIT</button>} position="right center">
+        <Popup trigger={<button className="commonButtons">EDIT</button>} position="right top">
           <PostEditor userId={userId}
                       isEdit={true}
           />
         </Popup>
-        <button onClick={this.onDeletePost}>DELETE</button>
+        <button className="commonButtons" onClick={this.onDeletePost}>DELETE</button>
+        <div className="commentPage" key={post.id}>
+          <span> <b>Post TITLE:</b> {post.title}</span> <br/>
+          <span> <b>Post:</b> {post.body}</span> <br/>
+        </div>
+        {showListOfComments}
       </div>
     );
   }

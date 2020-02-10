@@ -26,9 +26,10 @@ class Posts extends Component {
     const {posts} = this.props;
     const {userId} = this.props.match.params;
     const showListOfPosts = (posts || []).map(post => (
-      <div key={post.id}>
-        <span>  {post.title}</span> <br/>
-        <span> {post.body}</span> <br/>
+      <div className="postsPage"
+           key={post.id}>
+        <span><b>Post TITLE:</b> {post.title}</span> <br/>
+        <span><b>Post:</b> {post.body}</span> <br/>
         <NavLink to={`/users/${userId}/posts/${post.id}/details`}>
           <button>DETAILS</button>
         </NavLink>
@@ -36,13 +37,15 @@ class Posts extends Component {
     ));
     return (
       <div>
+        <h2>POSTS</h2>
         <NavLink to="/users">
-          <button>BACK</button>
+          <button className="commonButtons">BACK</button>
         </NavLink>
-        {showListOfPosts}
-        <Popup trigger={<button>ADD</button>} position="right center">
+        <Popup trigger={<button className="commonButtons">ADD</button>} position="right top">
           <PostEditor userId={userId} />
         </Popup>
+        {showListOfPosts}
+
       </div>
     );
   }

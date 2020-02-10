@@ -1,14 +1,120 @@
 body {
     margin: 10px;
+    background-image: url("css stuff/background-image.jpg");
 }
 
-.usersBorder {
-    border: 1px solid black;
-    width: 30%;
-
+.usersPage {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px 5px 5px 1px;
+    font: 20px arial, sans-serif;
+    width: 33%;
 }
-.usersBorder span {
-    border: 1px solid black;
-    border-right: none ;
-    padding: 0 3px;
+.usersPage span {
+    padding: 5px 5px 10px 5px;
+}
+.usersPage button{
+    float: right;
+    padding: 3px;
+    border: 2px black solid;
+    border-radius: 5px;
+    font: 16px arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    background-color: cadetblue;
+    color: white;
+}
+.usersPage button:hover {
+    border-color: yellow;
+    box-shadow: 2px 2px yellow;
+}
+.usersPage button:active {
+    box-shadow: none;
+    border: 3px red solid;
+}
+.mainUsers {
+    display: flex;
+    flex-direction: column;
+}
+
+.postsPage {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px 5px 5px 5px;
+    font: 20px arial, sans-serif;
+    text-align: justify;
+    width: 50%;
+}
+.postsPage span {
+    padding: 5px 5px 10px 5px;
+}
+.postsPage button{
+    padding: 3px;
+    margin-top: 5px;
+    border: 2px black solid;
+    border-radius: 5px;
+    font: 16px arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    background-color: cadetblue;
+    color: white;
+}
+.postsPage button:hover {
+    border-color: yellow;
+    box-shadow: 2px 2px yellow;
+}
+
+.postsPage button:active {
+    box-shadow: none;
+    border: 3px red solid;
+}
+
+.commonButtons {
+    padding: 3px;
+    margin-right: 5px;
+    border: 2px black solid;
+    border-radius: 5px;
+    font: 16px arial, sans-serif;
+    font-weight: bold;
+    box-shadow: 2px 2px black;
+    background-color: cadetblue;
+    color: white;
+}
+.commonButtons:hover {
+    border-color: yellow;
+    box-shadow: 2px 2px yellow;
+}
+
+.commonButtons:active {
+    box-shadow: none;
+    border: 3px red solid;
+}
+
+.commentPage{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 5px 5px 5px 1px;
+    font: 20px arial, sans-serif;
+    width: 50%;
+}
+.commentPage span{
+    padding: 5px 5px 10px 5px;
+}
+
+.popupWindow{
+    background-image: url("css stuff/background-image.jpg");
+    font: 16px arial, sans-serif;
+    font-weight: bold;
+}
+
+.popupWindow textarea {
+    resize: none;
+    font: 16px arial, sans-serif;
+}
+.popupWindow input {
+    width: 97%;
+    font: 16px arial, sans-serif;
 }

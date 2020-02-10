@@ -72,16 +72,17 @@ class PostEditor extends Component {
     const submitTitle = this.props.isEdit ? "EDIT POST" : "ADD POST";
     const {title, body} = this.state;
     return (
-      <div>
-        <input type="text"
+      <div className="popupWindow">
+        Title: <input type="text"
                value={title}
                name="title"
                onChange={this.onChangeField}/>
-        <textarea value={body}
+        Post: <textarea cols="22"
+                  rows="5" value={body}
                   name="body"
                   onChange={this.onChangeField}>
         </textarea>
-        <button onClick={this.onFormSubmit}>{submitTitle}</button>
+        <button className="commonButtons" onClick={this.onFormSubmit}>{submitTitle}</button>
       </div>
     );
   }

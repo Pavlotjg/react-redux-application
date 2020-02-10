@@ -22,9 +22,9 @@ class Users extends Component {
   render() {
     const {users} = this.props;
     const showListOfUsers = (users || []).map(user => (
-      <div className="usersBorder"
+      <div className="usersPage"
            key={user.id}>
-        <span>User:</span>
+        <span><b>User:</b></span>
         <span>{user.name}</span>
         <NavLink to={`/users/${user.id}/posts`}>
           <button>POSTS</button>
@@ -32,7 +32,8 @@ class Users extends Component {
       </div>
     ));
     return (
-      <div>
+      <div className="mainUsers">
+        <h2>ALL USERS</h2>
         {showListOfUsers}
       </div>
     );
